@@ -1,0 +1,966 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --bg-color: #F6F6F6;
+    --section-color: #FCF7F8;
+    --accent-color: #006494;
+    --sub-color: #F35B04;
+    --important-section: #9A031E;
+    --button-color: #201729;
+    --text-color: #000000;
+    --footer-bg: #D9D9D9;
+    --icon-color: #F35B04;
+    --box-shadow: 0px 4px 4px 0px rgba(32, 23, 41, 0.25);
+    --Main-font: 'Roboto', sans-serif;
+    --text-font: 'Archivo', sans-serif;
+    --border-radius: 5px;
+    --H1-font-size: 64px;
+    --H2-font-size: 32px;
+    --Title-font-size: 24px;
+    --text-font-size: 16px;
+    --icon-size: 24px;
+    --button-font-size: 18px;
+}
+
+body {
+    font-family: var(--Main-font);
+    background-color: var(--bg-color);
+  
+}
+.main-carousel-container {
+    width: 100%;
+    background-color: var(--accent-color);
+    box-shadow: var(--box-shadow);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    padding: 5px;
+}
+
+.slide-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--section-color);
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+}
+
+.slide-overlay h1 {
+    font-size: var(--H1-font-size);
+    margin-bottom: 25px;
+    margin-left: 100px;
+}
+
+.slide-overlay h3 {
+    font-size: 30px;
+    margin: 20% 0 5px 60px;
+}
+
+#description {
+    display: block;
+    margin-left: 60px;
+    font-size: 16px;
+    color: var(--section-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+  
+#description:hover {
+    color: var(--sub-color);
+    text-decoration: underline;
+}
+
+.slide-overlay p {
+    font-size: var(--Title-font-size);
+    margin-left: 100px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.slide-overlay button {
+    background-color: var(--button-color);
+    box-sizing: border-box;
+    color: var(--section-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    margin-left: 100px;
+    margin-top: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.slide-overlay button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(1.02);
+    color: var(--button-color);
+}
+
+.slide-overlay a {
+    color: var(--section-color);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.nav-button:hover {
+    opacity: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 10;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+
+/* Vision & Mission */
+#visionMission {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+    max-width: 1500px;
+}
+
+#divVision, #divMission {
+    flex: 1 1 500px;
+    background-color: #f9f9f9;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    flex-direction: column;
+    display: flex;
+    gap: 15px;
+    padding: 40px 20px;
+}
+
+#divVision h2, #divMission h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-align: center;
+}
+
+#divVision hr, #divMission hr {
+    border: none;
+    border-top: 3px solid var(--accent-color);
+    margin: 5px auto 15px;
+    width: 100%;
+}
+
+#divVision p, #divMission p {
+    font-size: 18px;
+    font-family: var(--text-font);
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Emergency Hotline */
+#emergencehotlines {
+    padding: 30px 30px;
+    background-color: var(--important-section);
+    box-shadow: var(--box-shadow);
+}
+
+#divEmergency {
+    width: 100%;
+    margin: auto;
+    padding: 30px;
+    background-color: var(--important-section);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+#divEmergency h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--section-color);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1.2px;
+}
+
+#divEmergency hr {
+    border: none;
+    border-top: 3px solid var(--section-color);
+    margin: 0 auto 25px auto;
+    width: 92%;
+}
+
+#hotlines {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+    gap: 20px;
+    width: 100%;
+}
+
+#hotline1, #hotline2, #hotline3 {
+    background-color: var(--section-color);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    width: 30%; 
+}
+
+#hotline1 img,
+#hotline2 img,
+#hotline3 img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.hotline-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.hotline-text h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+    color: var(--text-color);
+}
+
+.hotline-text p {
+    font-family: var(--text-font);
+    font-size: 14px;
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+#hotline1:hover, #hotline2:hover, #hotline3:hover {
+    transform: scale(1.02);
+    box-shadow: var(--box-shadow)
+}
+
+/* Latest news */
+#divLatest {
+    max-width: 1450px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: var(--section-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+#divLatest > h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#divLatest > hr {
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border: none;
+    margin: 10px 0 30px;
+}
+
+/* headline news */
+#headline {
+    display: flex;
+    gap: 20px;
+    background-color: var(--bg-color);
+    padding: 20px ;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#headline:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+#headline img {
+    width: 40%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.headline-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.headline-text h2 {
+    font-size: var(--Title-font-size);
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.headline-text p {
+    font-family: var(--text-font);
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 12px;
+}
+
+.headline-text a {
+    font-family: var(--text-font);
+    color: var(--sub-color);
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+}
+
+.headline-text a:hover {
+    text-decoration: underline;
+}
+
+/* lead news */
+#lead {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.news-card {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    gap: 20px;
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.news-card img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.lead-text {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lead-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px; 
+    line-height: 1.3;   
+}
+
+.lead-text p {
+    font-size: 12px;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 12px;
+    font-family: var(--text-font);
+}
+
+.lead-text a {
+    font-family: var(--text-font);
+    font-size: 12px;
+    align-self: flex-start;
+    color: var(--sub-color);
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.lead-text a:hover {
+    text-decoration: underline;
+}
+
+/* responsiveness */
+
+@media (max-width: 1048px) {
+    .slide-overlay h1 {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+
+    .slide-overlay p {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .slide-overlay button {
+        font-size: 0.7rem;
+        padding: 10px 20px;
+        width: 120px;
+    }
+
+    .slide-overlay h3 {
+        font-size: 25px;
+        margin: 20% 0 2px 60px;
+    }   
+
+    #description {
+        font-size: 16px;
+    }
+
+    #visionMission {
+        padding: 30px 40px;
+        gap: 15px;
+    }
+
+    #divVision, #divMission {
+        flex: 1 1 100%;
+        padding: 25px;
+    }
+
+    #divVision h2, #divMission h2 {
+        font-size: 24px;
+    }
+
+    #divVision p, #divMission p {
+        font-size: 16px;
+    }
+
+    #hotline1, #hotline2, #hotline3 {
+        width: 50%;
+    }
+
+    #divEmergency h2 {
+        font-size: 24px;
+    }
+
+    .hotline-text h3 {
+        font-size: 18px;
+    }
+
+    .hotline-text p {
+        font-size: 16px;
+    }
+
+    #divLatest > h2, .headline-text h2 {
+        font-size: 24px;
+    }
+
+    #lead {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .news-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 50%;
+        height: 300px;
+        margin-bottom: 0;
+    }
+
+    .news-card img {
+        width: 80%;
+        height: 50%;
+    }
+
+
+    .lead-text h3 {
+        font-size: 16px;
+    }
+
+    .lead-text p, .lead-text a {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .slide-overlay h1 {
+        font-size: var(--text-font-size);
+        margin-left: 30px;
+        margin-bottom: 5px;
+    }
+
+    .slide-overlay h3 {
+        font-size: 12px;
+        margin: 20% 0 2px 30px;
+    }
+
+    #description {
+        margin-left: 30px;
+        font-size: 5px;
+    }
+
+    .slide-overlay p {
+        font-size: 7px;
+        margin-left: 30px;
+        margin-bottom: 5px;
+    }
+
+    .slide-overlay a {
+        font-size: 7px;
+    }
+
+    .slide-overlay button {
+        width: 55px;
+        margin-left: 30px;
+        padding: 5px;
+    }
+
+    .nav-button {
+        font-size: 20px;
+    }
+
+    .dot {
+        width: 4px;
+        height: 4px;
+    }
+
+    #visionMission {
+        display: flex;
+        padding: 20px;
+        gap: 15px;
+        max-width: 500px;
+    }
+
+    #divVision, #divMission {
+        padding: 20px;
+        flex-direction: column;
+        width: 50%
+    }
+
+    #divVision h2, #divMission h2 {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    #divVision p, #divMission p {
+        font-size: 10px;
+    }
+
+    #divVision hr, #divMission hr {
+        border-top: 2px solid var(--accent-color);
+    }
+
+    #hotline1, #hotline2, #hotline3 {
+        width: 25%; 
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+
+    #divEmergency {
+        padding: 20px;
+    }
+
+    #divEmergency h2 {
+        font-size: 15px;
+    }
+
+    .hotline-text h3 {
+        font-size: 10px;
+    }
+
+    .hotline-text p {
+        font-size: 7px;
+    }
+
+    #hotline1 img,
+    #hotline2 img,
+    #hotline3 img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #divEmergency hr {
+        border-top: 2px solid var(--section-color);
+    }
+
+    #divLatest {
+        width: 550px;
+    }
+
+    #divLatest > hr {
+        border-top: 2px solid var(--section-color);
+
+    }
+
+    #divLatest > h2 {
+        font-size: 15px;
+    }
+
+    #headline {
+        flex-direction: row;
+        text-align: center;
+        padding: 16px;
+    }
+
+    #headline img {
+        width: 45%;
+        justify-content: center;
+    }
+
+    .headline-text h2 {
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .headline-text p {
+        font-size: 10px;
+    }
+
+    .headline-text a {
+        font-size: 10px;
+        text-align: left;
+    }
+
+    #headline {
+        padding: 12px;
+    }
+
+    .news-card {
+        flex-direction: column;
+        text-align: center;
+        width: 50%;
+    }
+
+    .news-card img {
+        height: 100px;
+        width: 150px;
+    }
+
+    .lead-text h3 {
+        font-size: 10px;
+    }
+
+    .lead-text p,
+    .lead-text a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .slide-overlay h1 {
+        font-size: 10px;
+        margin-left: 30px;
+        margin-bottom: 3px;
+    }
+
+    .slide-overlay h3 {
+        font-size: 8px;
+        margin: 20% 0 2px 20px;
+    }
+
+    #description {
+        margin-left: 20px;
+        font-size: 5px;
+    }
+
+    .slide-overlay p {
+        font-size: 5px;
+        margin-left: 30px;
+        margin-bottom: 3px;
+    }
+
+    .slide-overlay a {
+        font-size: 3px;
+    }
+
+    .slide-overlay button {
+        width: 30px;
+        margin-left: 30px;
+        padding: 1px;
+    }
+
+    .dots-container {
+        bottom: 10px;
+    }
+
+    .nav-button {
+        font-size: 10px;
+    }
+    
+    .dot {
+        width: 3px;
+        height: 3px;
+        margin: 0 2px;
+    }
+
+    #visionMission {
+        padding: 0;
+        width: 65%;
+    }
+
+    #divVision, #divMission {
+        padding: 15px;
+    }
+
+    #divVision h2, #divMission h2 {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    #divVision p, #divMission p {
+        font-size: 5px;
+        margin: 0 auto;
+    }
+
+    #divVision hr, #divMission hr {
+        border-top: 1px solid var(--accent-color);
+        margin-bottom: 5px;
+    }
+
+    #hotline1, #hotline2, #hotline3 {
+        width: 25%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #divEmergency h2 {
+        font-size: 10px;
+        margin-bottom: 5px;
+    }
+
+    #hotlines {
+        width: 100%;
+        padding: 0;
+        flex-direction: row;
+    }
+
+    .hotline-text {
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .hotline-text h3 {
+        font-size: 4px;
+    }
+
+    .hotline-text p {
+        font-size: 3px;
+    }
+
+    #hotline1 img,
+    #hotline2 img,
+    #hotline3 img {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+    }
+
+    #divEmergency hr {
+        border-top: 1px solid var(--section-color);
+        margin-bottom: 5px;
+    }
+
+    #divLatest {
+        margin: 20px auto;
+        padding: 15px;
+        width: 90%;
+    }
+
+    #divLatest > hr {
+        border-top: 1px solid var(--section-color);
+        margin-bottom: 10px;
+    }
+
+    #divLatest > h2 {
+        font-size: 10px;
+    }
+
+    #headline {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #headline img {
+        width: 100%;
+        height: 40%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .headline-text h2 {
+        font-size: 10px;
+        text-align: left;
+    }
+
+    .headline-text p {
+        font-size: 5px;
+    }
+
+    .headline-text a {
+        font-size: 5px;
+        text-align: left;
+    }
+
+    #lead {
+        flex-direction: column;  
+        gap: 20px;
+        padding: 10px 0;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .news-card {
+        flex-direction: column;  
+        padding: 10px;
+        gap: 7px;
+        width:70%;
+        height: 50%;
+    }
+
+    .news-card img {
+        width: 90px;      
+        height: 50px;     
+    }
+
+    .lead-text {
+        width: 80%;
+        align-items: center;
+        gap: 0;
+    }
+
+    .lead-text h3 {
+        font-size: 6px;
+        margin-bottom: 2px;
+    }
+
+    .lead-text p{
+    font-size: 4px;
+    margin-bottom: 2%;
+    }
+
+    .lead-text a {
+    font-size: 4px;
+    margin-bottom: 0;
+    }
+}
